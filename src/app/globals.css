@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-peach-light: #fce8e0;
+  --color-peach: #f7d4c8;
+  --color-pink-light: #ffcccc;
+  --color-pink: #f5b8b8;
+  --color-pink-dark: #e8a5a5;
+  --color-mauve: #b5838d;
+  --color-mauve-dark: #6d6875;
+  --color-charcoal: #4a4a4a;
+  --color-white: #ffffff;
+  --color-off-white: #fffcfb;
+
+  /* Semantic Colors */
+  --color-bg-gradient-start: #fce8e0;
+  --color-bg-gradient-end: #f5b8b8;
+  --color-card-bg: var(--color-white);
+  --color-card-shadow: rgba(181, 131, 141, 0.2);
+  --color-text-title: var(--color-charcoal);
+  --color-text-subtitle: var(--color-mauve);
+  --color-button-bg: var(--color-pink-light);
+  --color-button-text: var(--color-mauve);
+  --color-button-hover: var(--color-pink);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="inline"]{
+  --color-peach-light: var(--color-peach-light);
+  --color-peach: var(--color-peach);
+  --color-pink-light: var(--color-pink-light);
+  --color-pink: var(--color-pink);
+  --color-pink-dark: var(--color-pink-dark);
+  --color-mauve: var(--color-mauve);
+  --color-mauve-dark: var(--color-mauve-dark);
+  --color-charcoal: var(--color-charcoal);
+  --font-display: var(--font-luckiest-guy);
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background:
+    linear-gradient(to bottom right, #F7E1D7 26%, #FCC 50%) bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #F7E1D7 26%, #FCC 50%) bottom left / 50% 50% no-repeat,
+    linear-gradient(to top left, #F7E1D7 26%, #FCC 50%) top left / 50% 50% no-repeat,
+    linear-gradient(to top right, #F7E1D7 26%, #FCC 50%) top right / 50% 50% no-repeat;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
